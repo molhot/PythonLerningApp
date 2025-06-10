@@ -1,12 +1,18 @@
-https://qiita.com/LyasuiB/items/d979bba8289999200b81
-を元に作成中
-
-クローン後の対応
-1 docker compose up -d
-2 docker compose exec app bash
-3 (app内で)composer create-project --prefer-dist "laravel/laravel=11.*" .
-4 chmod -R 777 storage bootstrap/cache
-5 PythonLerninApp配下の.envを以下に書き換え
+https://qiita.com/LyasuiB/items/d979bba8289999200b81  
+を元に作成中  
+  
+**クローン後の対応**  
+##1  
+docker compose up -d  
+##2  
+docker compose exec app bash  
+##3  
+(app内で)composer create-project --prefer-dist "laravel/laravel=11.*" .  
+##4  
+chmod -R 777 storage bootstrap/cache  
+##5  
+PythonLerninApp配下の.envを以下に書き換え  
+```
 APP_NAME=Laravel
 APP_ENV=local
 APP_KEY=base64:jFKWG+wreQ2IlFc84WRVIeH4HwJUIy9+7/m4kGm5+Vk=
@@ -73,4 +79,6 @@ AWS_BUCKET=
 AWS_USE_PATH_STYLE_ENDPOINT=false
 
 VITE_APP_NAME="${APP_NAME}"
-6 php artisan config:clear
+```  
+##6  
+php artisan config:clear  
