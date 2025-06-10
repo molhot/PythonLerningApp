@@ -7,6 +7,7 @@ RUN sed -ri -e 's!/var/www/!${APACHE_DOCUMENT_ROOT}!g' /etc/apache2/apache2.conf
 
 # パッケージインストール
 RUN apt-get update && apt-get install -y \
+    libcurl4-openssl-dev \
     libicu-dev \
     libonig-dev \
     libzip-dev \
@@ -19,6 +20,9 @@ RUN apt-get update && apt-get install -y \
 
 # Apache の rewrite_module を有効化
 RUN a2enmod rewrite
+
+RUN docker-php-ext-configure intl && docker-php-ext-install intl
+RUN docker-php-ext-configure zip && docker-php-ext-install zip
 
 # PHP のエクステンションをインストール 〜コメントアウトしているライブラリはお好みで〜
 RUN docker-php-ext-install \
