@@ -1,0 +1,3 @@
+PythonLerningApp/*
+docker/mysql/data/*
+!PythonLerningApp/README.md
