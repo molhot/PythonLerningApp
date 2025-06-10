@@ -3,13 +3,21 @@ https://qiita.com/LyasuiB/items/d979bba8289999200b81
   
 **クローン後の対応**  
 ## 1  
+```
 docker compose up -d  
+```
 ## 2  
+```
 docker compose exec app bash  
+```
 ## 3  
+```
 (app内で)composer create-project --prefer-dist "laravel/laravel=11.*" .  
+```
 ## 4  
-chmod -R 777 storage bootstrap/cache  
+```
+(app内で)chmod -R 777 storage bootstrap/cache 
+``` 
 ## 5  
 PythonLerninApp配下の.envを以下に書き換え  
 ```
@@ -81,4 +89,6 @@ AWS_USE_PATH_STYLE_ENDPOINT=false
 VITE_APP_NAME="${APP_NAME}"
 ```  
 ## 6  
+```
 php artisan config:clear  
+```
